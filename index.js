@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 const moment = require('moment');
 const chalk = require('chalk');
+const consola = require('consola');
 const rs = require('readline-sync');
 
 function sleep(ms) {
@@ -27,7 +28,15 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-  console.log(`Trophy And Crown Hack Safe! [ReEdit]
+consola.start(`
+┈┈┈╲┈┈┈┈╱
+┈┈┈╱▔▔▔▔╲
+┈┈┃┈▇┈┈▇┈┃
+╭╮┣━━━━━━┫╭╮
+┃┃┃┈┈┈┈┈┈┃┃┃
+╰╯┃┈┈┈┈┈┈┃╰╯
+┈┈╰┓┏━━┓┏╯
+┈┈┈╰╯┈┈╰╯ console.log(`Trophy And Crown Hack Safe! [ReEdit]
 By : ${chalk.bold('Zexxy')} - Credit : @Zexxy & @Zexxy
 `);
 
