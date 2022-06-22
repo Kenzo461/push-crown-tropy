@@ -51,7 +51,7 @@ By : ${chalk.bold('Zexxy')} - Credit : @Zexxy & @Zexxy
       const crown = data.User.Crowns;
 
 console.log(chalk.bgBlack(`\r[ ${moment().format('HH:mm:ss')} ] ${chalk.white(`User : ${username}`)} | ${chalk.green(`Trophy : ${trophy}`)} | ${chalk.blue(`Crown : ${crown}`)}`));
-      await sleep(0);
+      await sleep(1000);
 
     } else if (result == 'BANNED') {
       console.log(chalk.bgRed(`Your Account has been Banned`));
