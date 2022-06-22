@@ -28,52 +28,32 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-consola.start(`
-
+  consola.start(`
 
 ███████╗███████╗██╗░░██╗██╗░░██╗██╗░░░██╗
 ╚════██║██╔════╝╚██╗██╔╝╚██╗██╔╝╚██╗░██╔╝
 ░░███╔═╝█████╗░░░╚███╔╝░░╚███╔╝░░╚████╔╝░
 ██╔══╝░░██╔══╝░░░██╔██╗░░██╔██╗░░░╚██╔╝░░
 ███████╗███████╗██╔╝╚██╗██╔╝╚██╗░░░██║░░░
-╚══════╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░  
+╚══════╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░
 
-(`Trophy And Crown Hack Safe! [ReEdit]
-By : ${chalk.bold('Zexxy')} - Credit : @Zexxy & @Zexxy
+
+ Trophy And Crown Hack Safe! [ReEdit]
+By : ${chalk.bold('Zexxy')} - Credit : @Zexxy & @Zexxy & Zexxy
 `);
 
   const auth = rs.question('Enter Authentication Code! : ');
-  console.log('');
+  consola.warn('');
 
   while (true) {
 
     const result = await GoStumble(auth);
     if (!result) {
 
-      console.log(chalk.red(`\r[ ${moment().format('HH:mm:ss')} ] Authentication Code Not Valid`));
-      break;
+      consola.error('Authentication Code Not Valid');
+      break
 
     } else if (result.includes('User')) {
-     ░░░░░░░░░███╗░░
-░░██╗░░░████║░░
-██████╗██╔██║░░
-╚═██╔═╝╚═╝██║░░
-░░╚═╝░░███████╗
-░░░░░░░╚══════╝
-
-░█████╗░██████╗░░█████╗░░██╗░░░░░░░██╗███╗░░██╗
-██╔══██╗██╔══██╗██╔══██╗░██║░░██╗░░██║████╗░██║
-██║░░╚═╝██████╔╝██║░░██║░╚██╗████╗██╔╝██╔██╗██║
-██║░░██╗██╔══██╗██║░░██║░░████╔═████║░██║╚████║
-╚█████╔╝██║░░██║╚█████╔╝░░╚██╔╝░╚██╔╝░██║░╚███║
-░╚════╝░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝░░╚══╝
-
-██████╗░███████╗██╗░░██╗
-██╔══██╗██╔════╝██║░██╔╝
-██║░░██║█████╗░░█████═╝░
-██║░░██║██╔══╝░░██╔═██╗░
-██████╔╝███████╗██║░╚██╗
-╚═════╝░╚══════╝╚═╝░░╚═╝
 
       const data = JSON.parse(result);
       const username = data.User.Username;
@@ -81,11 +61,11 @@ By : ${chalk.bold('Zexxy')} - Credit : @Zexxy & @Zexxy
       const trophy = data.User.SkillRating;
       const crown = data.User.Crowns;
 
-console.log(chalk.bgBlack(`\r[ ${moment().format('HH:mm:ss')} ] ${chalk.white(`User : ${username}`)} | ${chalk.green(`Trophy : ${trophy}`)} | ${chalk.blue(`Crown : ${crown}`)}`));
+(consola.info(` [ ${moment().format('HH:mm:ss')} ] ${consola.info(`User : ${username}`)} ${consola.info(`Server : ${country}`)} ${consola.info(`Trophy : ${trophy}`)} ${consola.info(`Crown : ${crown}`)}`));
       await sleep(6500);
 
     } else if (result == 'BANNED') {
-      console.log(chalk.bgRed(`Your Account has been Banned`));
+      console.log(consola.error(`Your Account has been Banned`));
      break;
     }
   }
