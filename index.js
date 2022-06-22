@@ -36,7 +36,7 @@ consola.start(`
 ░░███╔═╝█████╗░░░╚███╔╝░░╚███╔╝░░╚████╔╝░
 ██╔══╝░░██╔══╝░░░██╔██╗░░██╔██╗░░░╚██╔╝░░
 ███████╗███████╗██╔╝╚██╗██╔╝╚██╗░░░██║░░░
-╚══════╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░ console.log(`Trophy And Crown Hack Safe! [ReEdit]
+╚══════╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░  (`Trophy And Crown Hack Safe! [ReEdit]
 By : ${chalk.bold('Zexxy')} - Credit : @Zexxy & @Zexxy
 `);
 
