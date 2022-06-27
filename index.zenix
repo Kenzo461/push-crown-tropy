@@ -45,21 +45,18 @@ const ipj = `${ip.address()}`
 									
   console.log(`
 
-███████████████████████████████████████████████
-█░▄▄░▄█▄─▄▄─█▄─▀█▄─▄█▄─▄█▄─▀─▄█▄─▀─▄█▄▄▄░█▄▄▄░█
-██▀▄█▀██─▄█▀██─█▄▀─███─███▀─▀███▀─▀████░████░██
-▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▄▄▀▄▄▄▀▄▄█▄▄▀▄▄█▄▄▀▀▄██▀▀▄██▀
+
  ${chalk.bgRed.bold(`Wellcome`)}
 ${chalk.bgRed(`YOUR IP ADDRESS :`)} ${chalk.white.bold(`${ipj}`)}
 ${chalk.black.bgYellow.bold(`Speed : `)} ${chalk.white.bold(`${latensi.toFixed(4)}`)}
 
-${chalk.bgRed.bold(` Developer Script : `)} ${chalk.white.bold(`ZenixXX7`)} 
+${chalk.bgRed.bold(` Developer Script : `)} ${chalk.white.bold(`Zexxy`)} 
 ${chalk.bgRed.bold(` Version : `)} ${chalk.white.bold(`2.0.2`)}
 ${chalk.bgWhite.bold.black(` Information Script : `)} ${chalk.white.bold(`NodeJs`)} 
 ${chalk.bgWhite.bold.black(` Keamanan Script : `)} ${chalk.white.bold(`99% Safe`)} 
-${chalk.bgRed.bold(` Orang Yang Membantu Saya Menyusun Script Ini `)} ${chalk.white.bold(`Eskey,Epan,Arnazxyz,Dkmpostor,Vaengg,Zenixx7`)} 
+${chalk.bgRed.bold(` Orang Yang Membantu Saya Menyusun Script Ini `)} ${chalk.white.bold(`Zexxy,Lana`)} 
 
-${chalk.bgRed.bold(`Contact Developer  : `)} ${chalk.blue(`Discord : `)} ${chalk.bgWhite.bold.black(`zenix77#5157`)}
+${chalk.bgRed.bold(`Contact Developer  : `)} ${chalk.blue(`Discord : `)} ${chalk.bgWhite.bold.black(`zexxy`)}
 `);
 
   const auth = rs.question('Enter Authentication Code! : ');
@@ -100,9 +97,9 @@ ${chalk.magenta(`Last Loggin Your Account : ${loging}`)}
 ${chalk.green(` Server : ${country}`)} 
 ${chalk.blueBright(`You Account Exp : ${exp}`)}
 ${chalk.cyan(` Skins : ${skin}`)}
-${chalk.white(`Done +1 Crown + 30 Trophy By Zenix77`)}
+${chalk.white(`Done +1 Crown + 30 Trophy By Zexxy`)}
 ${chalk.white(` `)}`));
-      await sleep(8100);
+      await sleep(1000);
 
     } else if (result == 'BANNED') {
       console.log(consola.error(`Your Account has been Banned`));
