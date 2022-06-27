@@ -10,7 +10,7 @@ function sleep(ms) {
 
 (async () => {
 	console.clear()
- CFonts.say(`Hack Sg`, {
+ CFonts.say(`Zexxy`, {
             font: '3D',
             align: 'left',
             gradient: ['red', 'magenta']
