@@ -1,9 +1,10 @@
 {
   "dependencies": {
     "chalk": "^4.1.0",
-    "delay": "^1.0.0",
     "moment": "^2.29.3",
     "node-fetch": "^2.6.1",
-    "readline-sync": "^1.4.10"
+    "cfonts": "^2.9.2",
+    "readline-sync": "^1.4.10",
+    "window-size": "^1.1.1"
   }
 }
