@@ -1,345 +1,415 @@
-declare type CSSColor =
-	| 'aliceblue'
-	| 'antiquewhite'
-	| 'aqua'
-	| 'aquamarine'
-	| 'azure'
-	| 'beige'
-	| 'bisque'
+/**
+Basic foreground colors.
+
+[More colors here.](https://github.com/chalk/chalk/blob/master/readme.md#256-and-truecolor-color-support)
+*/
+declare type ForegroundColor =
 	| 'black'
-	| 'blanchedalmond'
-	| 'blue'
-	| 'blueviolet'
-	| 'brown'
-	| 'burlywood'
-	| 'cadetblue'
-	| 'chartreuse'
-	| 'chocolate'
-	| 'coral'
-	| 'cornflowerblue'
-	| 'cornsilk'
-	| 'crimson'
-	| 'cyan'
-	| 'darkblue'
-	| 'darkcyan'
-	| 'darkgoldenrod'
-	| 'darkgray'
-	| 'darkgreen'
-	| 'darkgrey'
-	| 'darkkhaki'
-	| 'darkmagenta'
-	| 'darkolivegreen'
-	| 'darkorange'
-	| 'darkorchid'
-	| 'darkred'
-	| 'darksalmon'
-	| 'darkseagreen'
-	| 'darkslateblue'
-	| 'darkslategray'
-	| 'darkslategrey'
-	| 'darkturquoise'
-	| 'darkviolet'
-	| 'deeppink'
-	| 'deepskyblue'
-	| 'dimgray'
-	| 'dimgrey'
-	| 'dodgerblue'
-	| 'firebrick'
-	| 'floralwhite'
-	| 'forestgreen'
-	| 'fuchsia'
-	| 'gainsboro'
-	| 'ghostwhite'
-	| 'gold'
-	| 'goldenrod'
-	| 'gray'
-	| 'green'
-	| 'greenyellow'
-	| 'grey'
-	| 'honeydew'
-	| 'hotpink'
-	| 'indianred'
-	| 'indigo'
-	| 'ivory'
-	| 'khaki'
-	| 'lavender'
-	| 'lavenderblush'
-	| 'lawngreen'
-	| 'lemonchiffon'
-	| 'lightblue'
-	| 'lightcoral'
-	| 'lightcyan'
-	| 'lightgoldenrodyellow'
-	| 'lightgray'
-	| 'lightgreen'
-	| 'lightgrey'
-	| 'lightpink'
-	| 'lightsalmon'
-	| 'lightseagreen'
-	| 'lightskyblue'
-	| 'lightslategray'
-	| 'lightslategrey'
-	| 'lightsteelblue'
-	| 'lightyellow'
-	| 'lime'
-	| 'limegreen'
-	| 'linen'
-	| 'magenta'
-	| 'maroon'
-	| 'mediumaquamarine'
-	| 'mediumblue'
-	| 'mediumorchid'
-	| 'mediumpurple'
-	| 'mediumseagreen'
-	| 'mediumslateblue'
-	| 'mediumspringgreen'
-	| 'mediumturquoise'
-	| 'mediumvioletred'
-	| 'midnightblue'
-	| 'mintcream'
-	| 'mistyrose'
-	| 'moccasin'
-	| 'navajowhite'
-	| 'navy'
-	| 'oldlace'
-	| 'olive'
-	| 'olivedrab'
-	| 'orange'
-	| 'orangered'
-	| 'orchid'
-	| 'palegoldenrod'
-	| 'palegreen'
-	| 'paleturquoise'
-	| 'palevioletred'
-	| 'papayawhip'
-	| 'peachpuff'
-	| 'peru'
-	| 'pink'
-	| 'plum'
-	| 'powderblue'
-	| 'purple'
-	| 'rebeccapurple'
 	| 'red'
-	| 'rosybrown'
-	| 'royalblue'
-	| 'saddlebrown'
-	| 'salmon'
-	| 'sandybrown'
-	| 'seagreen'
-	| 'seashell'
-	| 'sienna'
-	| 'silver'
-	| 'skyblue'
-	| 'slateblue'
-	| 'slategray'
-	| 'slategrey'
-	| 'snow'
-	| 'springgreen'
-	| 'steelblue'
-	| 'tan'
-	| 'teal'
-	| 'thistle'
-	| 'tomato'
-	| 'turquoise'
-	| 'violet'
-	| 'wheat'
-	| 'white'
-	| 'whitesmoke'
+	| 'green'
 	| 'yellow'
-	| 'yellowgreen';
+	| 'blue'
+	| 'magenta'
+	| 'cyan'
+	| 'white'
+	| 'gray'
+	| 'grey'
+	| 'blackBright'
+	| 'redBright'
+	| 'greenBright'
+	| 'yellowBright'
+	| 'blueBright'
+	| 'magentaBright'
+	| 'cyanBright'
+	| 'whiteBright';
 
-declare namespace ansiStyles {
-	interface ColorConvert {
+/**
+Basic background colors.
+
+[More colors here.](https://github.com/chalk/chalk/blob/master/readme.md#256-and-truecolor-color-support)
+*/
+declare type BackgroundColor =
+	| 'bgBlack'
+	| 'bgRed'
+	| 'bgGreen'
+	| 'bgYellow'
+	| 'bgBlue'
+	| 'bgMagenta'
+	| 'bgCyan'
+	| 'bgWhite'
+	| 'bgGray'
+	| 'bgGrey'
+	| 'bgBlackBright'
+	| 'bgRedBright'
+	| 'bgGreenBright'
+	| 'bgYellowBright'
+	| 'bgBlueBright'
+	| 'bgMagentaBright'
+	| 'bgCyanBright'
+	| 'bgWhiteBright';
+
+/**
+Basic colors.
+
+[More colors here.](https://github.com/chalk/chalk/blob/master/readme.md#256-and-truecolor-color-support)
+*/
+declare type Color = ForegroundColor | BackgroundColor;
+
+declare type Modifiers =
+	| 'reset'
+	| 'bold'
+	| 'dim'
+	| 'italic'
+	| 'underline'
+	| 'inverse'
+	| 'hidden'
+	| 'strikethrough'
+	| 'visible';
+
+declare namespace chalk {
+	/**
+	Levels:
+	- `0` - All colors disabled.
+	- `1` - Basic 16 colors support.
+	- `2` - ANSI 256 colors support.
+	- `3` - Truecolor 16 million colors support.
+	*/
+	type Level = 0 | 1 | 2 | 3;
+
+	interface Options {
 		/**
-		The RGB color space.
+		Specify the color support for Chalk.
 
-		@param red - (`0`-`255`)
-		@param green - (`0`-`255`)
-		@param blue - (`0`-`255`)
+		By default, color support is automatically detected based on the environment.
+
+		Levels:
+		- `0` - All colors disabled.
+		- `1` - Basic 16 colors support.
+		- `2` - ANSI 256 colors support.
+		- `3` - Truecolor 16 million colors support.
 		*/
-		rgb(red: number, green: number, blue: number): string;
-
-		/**
-		The RGB HEX color space.
-
-		@param hex - A hexadecimal string containing RGB data.
-		*/
-		hex(hex: string): string;
-
-		/**
-		@param keyword - A CSS color name.
-		*/
-		keyword(keyword: CSSColor): string;
-
-		/**
-		The HSL color space.
-
-		@param hue - (`0`-`360`)
-		@param saturation - (`0`-`100`)
-		@param lightness - (`0`-`100`)
-		*/
-		hsl(hue: number, saturation: number, lightness: number): string;
-
-		/**
-		The HSV color space.
-
-		@param hue - (`0`-`360`)
-		@param saturation - (`0`-`100`)
-		@param value - (`0`-`100`)
-		*/
-		hsv(hue: number, saturation: number, value: number): string;
-
-		/**
-		The HSV color space.
-
-		@param hue - (`0`-`360`)
-		@param whiteness - (`0`-`100`)
-		@param blackness - (`0`-`100`)
-		*/
-		hwb(hue: number, whiteness: number, blackness: number): string;
-
-		/**
-		Use a [4-bit unsigned number](https://en.wikipedia.org/wiki/ANSI_escape_code#3/4-bit) to set text color.
-		*/
-		ansi(ansi: number): string;
-
-		/**
-		Use an [8-bit unsigned number](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) to set text color.
-		*/
-		ansi256(ansi: number): string;
+		level?: Level;
 	}
 
-	interface CSPair {
+	/**
+	Return a new Chalk instance.
+	*/
+	type Instance = new (options?: Options) => Chalk;
+
+	/**
+	Detect whether the terminal supports color.
+	*/
+	interface ColorSupport {
 		/**
-		The ANSI terminal control sequence for starting this style.
+		The color level used by Chalk.
 		*/
-		readonly open: string;
+		level: Level;
 
 		/**
-		The ANSI terminal control sequence for ending this style.
+		Return whether Chalk supports basic 16 colors.
 		*/
-		readonly close: string;
+		hasBasic: boolean;
+
+		/**
+		Return whether Chalk supports ANSI 256 colors.
+		*/
+		has256: boolean;
+
+		/**
+		Return whether Chalk supports Truecolor 16 million colors.
+		*/
+		has16m: boolean;
 	}
 
-	interface ColorBase {
-		readonly ansi: ColorConvert;
-		readonly ansi256: ColorConvert;
-		readonly ansi16m: ColorConvert;
-
+	interface ChalkFunction {
 		/**
-		The ANSI terminal control sequence for ending this color.
+		Use a template string.
+
+		@remarks Template literals are unsupported for nested calls (see [issue #341](https://github.com/chalk/chalk/issues/341))
+
+		@example
+		```
+		import chalk = require('chalk');
+
+		log(chalk`
+		CPU: {red ${cpu.totalPercent}%}
+		RAM: {green ${ram.used / ram.total * 100}%}
+		DISK: {rgb(255,131,0) ${disk.used / disk.total * 100}%}
+		`);
+		```
+
+		@example
+		```
+		import chalk = require('chalk');
+
+		log(chalk.red.bgBlack`2 + 3 = {bold ${2 + 3}}`)
+		```
 		*/
-		readonly close: string;
+		(text: TemplateStringsArray, ...placeholders: unknown[]): string;
+
+		(...text: unknown[]): string;
 	}
 
-	interface Modifier {
+	interface Chalk extends ChalkFunction {
 		/**
-		Resets the current color chain.
+		Return a new Chalk instance.
 		*/
-		readonly reset: CSPair;
+		Instance: Instance;
 
 		/**
-		Make text bold.
+		The color support for Chalk.
+
+		By default, color support is automatically detected based on the environment.
+
+		Levels:
+		- `0` - All colors disabled.
+		- `1` - Basic 16 colors support.
+		- `2` - ANSI 256 colors support.
+		- `3` - Truecolor 16 million colors support.
 		*/
-		readonly bold: CSPair;
+		level: Level;
 
 		/**
-		Emitting only a small amount of light.
+		Use HEX value to set text color.
+
+		@param color - Hexadecimal value representing the desired color.
+
+		@example
+		```
+		import chalk = require('chalk');
+
+		chalk.hex('#DEADED');
+		```
 		*/
-		readonly dim: CSPair;
+		hex(color: string): Chalk;
 
 		/**
-		Make text italic. (Not widely supported)
+		Use keyword color value to set text color.
+
+		@param color - Keyword value representing the desired color.
+
+		@example
+		```
+		import chalk = require('chalk');
+
+		chalk.keyword('orange');
+		```
 		*/
-		readonly italic: CSPair;
+		keyword(color: string): Chalk;
 
 		/**
-		Make text underline. (Not widely supported)
+		Use RGB values to set text color.
 		*/
-		readonly underline: CSPair;
+		rgb(red: number, green: number, blue: number): Chalk;
 
 		/**
-		Inverse background and foreground colors.
+		Use HSL values to set text color.
 		*/
-		readonly inverse: CSPair;
+		hsl(hue: number, saturation: number, lightness: number): Chalk;
 
 		/**
-		Prints the text, but makes it invisible.
+		Use HSV values to set text color.
 		*/
-		readonly hidden: CSPair;
+		hsv(hue: number, saturation: number, value: number): Chalk;
 
 		/**
-		Puts a horizontal line through the center of the text. (Not widely supported)
+		Use HWB values to set text color.
 		*/
-		readonly strikethrough: CSPair;
-	}
-
-	interface ForegroundColor {
-		readonly black: CSPair;
-		readonly red: CSPair;
-		readonly green: CSPair;
-		readonly yellow: CSPair;
-		readonly blue: CSPair;
-		readonly cyan: CSPair;
-		readonly magenta: CSPair;
-		readonly white: CSPair;
+		hwb(hue: number, whiteness: number, blackness: number): Chalk;
 
 		/**
+		Use a [Select/Set Graphic Rendition](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_parameters) (SGR) [color code number](https://en.wikipedia.org/wiki/ANSI_escape_code#3/4_bit) to set text color.
+
+		30 <= code && code < 38 || 90 <= code && code < 98
+		For example, 31 for red, 91 for redBright.
+		*/
+		ansi(code: number): Chalk;
+
+		/**
+		Use a [8-bit unsigned number](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) to set text color.
+		*/
+		ansi256(index: number): Chalk;
+
+		/**
+		Use HEX value to set background color.
+
+		@param color - Hexadecimal value representing the desired color.
+
+		@example
+		```
+		import chalk = require('chalk');
+
+		chalk.bgHex('#DEADED');
+		```
+		*/
+		bgHex(color: string): Chalk;
+
+		/**
+		Use keyword color value to set background color.
+
+		@param color - Keyword value representing the desired color.
+
+		@example
+		```
+		import chalk = require('chalk');
+
+		chalk.bgKeyword('orange');
+		```
+		*/
+		bgKeyword(color: string): Chalk;
+
+		/**
+		Use RGB values to set background color.
+		*/
+		bgRgb(red: number, green: number, blue: number): Chalk;
+
+		/**
+		Use HSL values to set background color.
+		*/
+		bgHsl(hue: number, saturation: number, lightness: number): Chalk;
+
+		/**
+		Use HSV values to set background color.
+		*/
+		bgHsv(hue: number, saturation: number, value: number): Chalk;
+
+		/**
+		Use HWB values to set background color.
+		*/
+		bgHwb(hue: number, whiteness: number, blackness: number): Chalk;
+
+		/**
+		Use a [Select/Set Graphic Rendition](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_parameters) (SGR) [color code number](https://en.wikipedia.org/wiki/ANSI_escape_code#3/4_bit) to set background color.
+
+		30 <= code && code < 38 || 90 <= code && code < 98
+		For example, 31 for red, 91 for redBright.
+		Use the foreground code, not the background code (for example, not 41, nor 101).
+		*/
+		bgAnsi(code: number): Chalk;
+
+		/**
+		Use a [8-bit unsigned number](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) to set background color.
+		*/
+		bgAnsi256(index: number): Chalk;
+
+		/**
+		Modifier: Resets the current color chain.
+		*/
+		readonly reset: Chalk;
+
+		/**
+		Modifier: Make text bold.
+		*/
+		readonly bold: Chalk;
+
+		/**
+		Modifier: Emitting only a small amount of light.
+		*/
+		readonly dim: Chalk;
+
+		/**
+		Modifier: Make text italic. (Not widely supported)
+		*/
+		readonly italic: Chalk;
+
+		/**
+		Modifier: Make text underline. (Not widely supported)
+		*/
+		readonly underline: Chalk;
+
+		/**
+		Modifier: Inverse background and foreground colors.
+		*/
+		readonly inverse: Chalk;
+
+		/**
+		Modifier: Prints the text, but makes it invisible.
+		*/
+		readonly hidden: Chalk;
+
+		/**
+		Modifier: Puts a horizontal line through the center of the text. (Not widely supported)
+		*/
+		readonly strikethrough: Chalk;
+
+		/**
+		Modifier: Prints the text only when Chalk has a color support level > 0.
+		Can be useful for things that are purely cosmetic.
+		*/
+		readonly visible: Chalk;
+
+		readonly black: Chalk;
+		readonly red: Chalk;
+		readonly green: Chalk;
+		readonly yellow: Chalk;
+		readonly blue: Chalk;
+		readonly magenta: Chalk;
+		readonly cyan: Chalk;
+		readonly white: Chalk;
+
+		/*
 		Alias for `blackBright`.
 		*/
-		readonly gray: CSPair;
+		readonly gray: Chalk;
 
-		/**
+		/*
 		Alias for `blackBright`.
 		*/
-		readonly grey: CSPair;
+		readonly grey: Chalk;
 
-		readonly blackBright: CSPair;
-		readonly redBright: CSPair;
-		readonly greenBright: CSPair;
-		readonly yellowBright: CSPair;
-		readonly blueBright: CSPair;
-		readonly cyanBright: CSPair;
-		readonly magentaBright: CSPair;
-		readonly whiteBright: CSPair;
-	}
+		readonly blackBright: Chalk;
+		readonly redBright: Chalk;
+		readonly greenBright: Chalk;
+		readonly yellowBright: Chalk;
+		readonly blueBright: Chalk;
+		readonly magentaBright: Chalk;
+		readonly cyanBright: Chalk;
+		readonly whiteBright: Chalk;
 
-	interface BackgroundColor {
-		readonly bgBlack: CSPair;
-		readonly bgRed: CSPair;
-		readonly bgGreen: CSPair;
-		readonly bgYellow: CSPair;
-		readonly bgBlue: CSPair;
-		readonly bgCyan: CSPair;
-		readonly bgMagenta: CSPair;
-		readonly bgWhite: CSPair;
+		readonly bgBlack: Chalk;
+		readonly bgRed: Chalk;
+		readonly bgGreen: Chalk;
+		readonly bgYellow: Chalk;
+		readonly bgBlue: Chalk;
+		readonly bgMagenta: Chalk;
+		readonly bgCyan: Chalk;
+		readonly bgWhite: Chalk;
 
-		/**
+		/*
 		Alias for `bgBlackBright`.
 		*/
-		readonly bgGray: CSPair;
+		readonly bgGray: Chalk;
 
-		/**
+		/*
 		Alias for `bgBlackBright`.
 		*/
-		readonly bgGrey: CSPair;
+		readonly bgGrey: Chalk;
 
-		readonly bgBlackBright: CSPair;
-		readonly bgRedBright: CSPair;
-		readonly bgGreenBright: CSPair;
-		readonly bgYellowBright: CSPair;
-		readonly bgBlueBright: CSPair;
-		readonly bgCyanBright: CSPair;
-		readonly bgMagentaBright: CSPair;
-		readonly bgWhiteBright: CSPair;
+		readonly bgBlackBright: Chalk;
+		readonly bgRedBright: Chalk;
+		readonly bgGreenBright: Chalk;
+		readonly bgYellowBright: Chalk;
+		readonly bgBlueBright: Chalk;
+		readonly bgMagentaBright: Chalk;
+		readonly bgCyanBright: Chalk;
+		readonly bgWhiteBright: Chalk;
 	}
 }
 
-declare const ansiStyles: {
-	readonly modifier: ansiStyles.Modifier;
-	readonly color: ansiStyles.ForegroundColor & ansiStyles.ColorBase;
-	readonly bgColor: ansiStyles.BackgroundColor & ansiStyles.ColorBase;
-	readonly codes: ReadonlyMap<number, number>;
-} & ansiStyles.BackgroundColor & ansiStyles.ForegroundColor & ansiStyles.Modifier;
+/**
+Main Chalk object that allows to chain styles together.
+Call the last one as a method with a string argument.
+Order doesn't matter, and later styles take precedent in case of a conflict.
+This simply means that `chalk.red.yellow.green` is equivalent to `chalk.green`.
+*/
+declare const chalk: chalk.Chalk & chalk.ChalkFunction & {
+	supportsColor: chalk.ColorSupport | false;
+	Level: chalk.Level;
+	Color: Color;
+	ForegroundColor: ForegroundColor;
+	BackgroundColor: BackgroundColor;
+	Modifiers: Modifiers;
+	stderr: chalk.Chalk & {supportsColor: chalk.ColorSupport | false};
+};
 
-export = ansiStyles;
+export = chalk;
