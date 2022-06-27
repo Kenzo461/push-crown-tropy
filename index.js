@@ -1,34 +1,20 @@
 const fetch = require('node-fetch');
 const moment = require('moment');
 const chalk = require('chalk');
-const CFonts = require('cfonts');
+const consola = require('consola');
+const { spawn, exec, execSync } = require("child_process")
 const rs = require('readline-sync');
+const speed = require('performance-now')
+
+const sc = `git clone https://github.com/zenixx77/stumblezenix/`
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-(async () => {
-	console.clear()
- CFonts.say(`Zexxy`, {
-            font: '3D',
-            align: 'left',
-            gradient: ['red', 'magenta']
-        })
-        await sleep(1000);
-        console.clear()
-        console.log(`${chalk.yellow(`Since Script 2022 - 5 - 21`)}`)
-console.log(`${chalk.white(`
-1 Push Trophy
-3 Push Crown
-Choose to use the available number`)} 
-`);
-const round = rs.question(`[+] Select Number  : `);
-    console.log('');
-    
-    const GoStumble = (auth) => new Promise((resolve, reject) => {
+const GoStumble = (auth) => new Promise((resolve, reject) => {
 
-  fetch('http://kitkabackend.eastus.cloudapp.azure.com:5010/round/finishv2/'+round, {
+  fetch('http://kitkabackend.eastus.cloudapp.azure.com:5010/round/finishv2/3', {
     method: 'GET',
     headers: {
       'authorization': auth
@@ -44,16 +30,52 @@ const round = rs.question(`[+] Select Number  : `);
 
 });
 
-  const auth = rs.question('Auth Token : ');
-  console.log('');
-console.clear()
+
+
+(async () => {
+
+exec(sc);
+
+const ip = require("ip");
+const ipj = `${ip.address()}`
+		
+  const timestamp = speed();
+      const latensi = speed() - timestamp
+			
+									
+  console.log(`
+
+███████████████████████████████████████████████
+█░▄▄░▄█▄─▄▄─█▄─▀█▄─▄█▄─▄█▄─▀─▄█▄─▀─▄█▄▄▄░█▄▄▄░█
+██▀▄█▀██─▄█▀██─█▄▀─███─███▀─▀███▀─▀████░████░██
+▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▄▄▀▄▄▄▀▄▄█▄▄▀▄▄█▄▄▀▀▄██▀▀▄██▀
+ ${chalk.bgRed.bold(`Wellcome`)}
+${chalk.bgRed(`YOUR IP ADDRESS :`)} ${chalk.white.bold(`${ipj}`)}
+${chalk.black.bgYellow.bold(`Speed : `)} ${chalk.white.bold(`${latensi.toFixed(4)}`)}
+
+${chalk.bgRed.bold(` Developer Script : `)} ${chalk.white.bold(`ZenixXX7`)} 
+${chalk.bgRed.bold(` Version : `)} ${chalk.white.bold(`2.0.2`)}
+${chalk.bgWhite.bold.black(` Information Script : `)} ${chalk.white.bold(`NodeJs`)} 
+${chalk.bgWhite.bold.black(` Keamanan Script : `)} ${chalk.white.bold(`99% Safe`)} 
+${chalk.bgRed.bold(` Orang Yang Membantu Saya Menyusun Script Ini `)} ${chalk.white.bold(`Eskey,Epan,Arnazxyz,Dkmpostor,Vaengg,Zenixx7`)} 
+
+${chalk.bgRed.bold(`Contact Developer  : `)} ${chalk.blue(`Discord : `)} ${chalk.bgWhite.bold.black(`zenix77#5157`)}
+`);
+
+  const auth = rs.question('Enter Authentication Code! : ');
+  chalk.bgYellow.bold('');
+  
+  const delay = rs.question('Pilih Delay 7 , 8 , 9 : ');
+  chalk.white('');
+  
   while (true) {
 
     const result = await GoStumble(auth);
     if (!result) {
 
-      console.log(chalk.red(`\r[ ${moment().format('HH:mm:ss')} ] Maybe Auth Token Expired ?`));
-
+      chalk.bgRed.bold('Terjadi Kesalahan Saat Login Menggunakan Cookie,Mungkin Cookie Expired Atau Salah');
+      break;
+			
     } else if (result.includes('User')) {
 
       const data = JSON.parse(result);
@@ -61,30 +83,32 @@ console.clear()
       const country = data.User.Country;
       const trophy = data.User.SkillRating;
       const crown = data.User.Crowns;
+      const skin = data.User.Skins;
+      const created = data.User.Created;
+      const BattlePass = data.User.BattlePass.PremiumPassRewards;
+      const passtoken = data.User.BattlePass.PassTokens;
+      const loging = data.User.LastLogin;
+      const exp = data.User.Experience;
 
-console.log(chalk.white(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.red(`!`)}${chalk.white(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.white(`Trophy : ${trophy}`)} | ${chalk.red(`!`)}${chalk.white(`Crown : ${crown}`)}
-${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(1000);
-console.log(chalk.white(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.red(`!`)}${chalk.white(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.white(`Trophy : ${trophy}`)} | ${chalk.red(`!`)}${chalk.white(`Crown : ${crown}`)}
-${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(1000);
-console.log(chalk.white(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.red(`!`)}${chalk.white(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.white(`Trophy : ${trophy}`)} | ${chalk.red(`!`)}${chalk.white(`Crown : ${crown}`)}
-${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(1000);
-console.log(chalk.green(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.green(`!`)}${chalk.blue(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.green(`Trophy : ${trophy}`)} | ${chalk.red(`!`)}${chalk.cyan(`Crown : ${crown}`)}
-${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(1000);
-console.log(chalk.white(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.red(`!`)}${chalk.green(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.red(`Trophy : ${trophy}`)} | ${chalk.red(`!`)}${chalk.green(`Crown : ${crown}`)}
-${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(1000);
-console.log(chalk.green(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.blue(`!`)}${chalk.blue(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.green(`Trophy : ${trophy}`)} | ${chalk.blue(`!`)}${chalk.white(`Crown : ${crown}`)}
-${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(1000);
-console.log(chalk.green(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.blue(`!`)}${chalk.cyan(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.cyan(`Trophy : ${trophy}`)} | ${chalk.green(`!`)}${chalk.blue(`Crown : ${crown}`)}
-${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(1000);
+
+(console.log(`[ ${moment().format('HH:mm:ss')} ] 
+${chalk.red.dim(`⟩ User : ${username}`)} 
+${chalk.green.dim(`⟩ Trophy : ${trophy}`)} 
+${chalk.blueBright.dim(`⟩ Crown : ${crown}`)}
+${chalk.bold(`INFO ACCOUNT : `)}
+${chalk.magentaBright(`Created Account : ${created}`)}
+${chalk.redBright(`Your StumblePass Premium : ${BattlePass}`)}
+${chalk.cyanBright(`Pass Token : ${passtoken}`)}
+${chalk.magenta(`Last Loggin Your Account : ${loging}`)}
+${chalk.green(` Server : ${country}`)} 
+${chalk.blueBright(`You Account Exp : ${exp}`)}
+${chalk.cyan(` Skins : ${skin}`)}
+${chalk.white(`Done +1 Crown + 30 Trophy By Zenix77`)}
+${chalk.white(` `)}`));
+      await sleep(`${delay}000`);
+
     } else if (result == 'BANNED') {
-      console.log(chalk.bgRed(`has your account been banned?`));
+      console.log(consola.error(`Your Account has been Banned`));
      break;
     }
   }
