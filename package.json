@@ -3,8 +3,9 @@
     "chalk": "^4.1.0",
     "moment": "^2.29.3",
     "node-fetch": "^2.6.1",
-    "cfonts": "^2.9.2",
-    "readline-sync": "^1.4.10",
-    "window-size": "^1.1.1"
+    "consola": "^2.15.3",
+    "request-ip": "^2.2.0", 
+    "express": "^4.18.1", 
+    "readline-sync": "^1.4.10"
   }
 }
