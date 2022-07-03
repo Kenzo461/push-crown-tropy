@@ -15,7 +15,7 @@ function sleep(ms) {
             align: 'left',
             gradient: ['red', 'magenta']
         })
-        await sleep(2700);
+        await sleep(0050);
         console.clear()
         console.log(`${chalk.yellow(`Since Script 2022 - 5 - 21`)}`)
 console.log(`${chalk.white(`
@@ -64,7 +64,7 @@ console.clear()
 
 console.log(chalk.green(`\rTime : [ ${moment().format('HH:mm:ss')} ] ${chalk.red(`!`)}${chalk.green(`User : ${username}`)} | ${chalk.red(`!`)}${chalk.cyan(`Trophy : ${trophy}`)} | ${chalk.red(`!`)}${chalk.green(`Crown : ${crown}`)}
 ${chalk.red(` Status : Succes✓`)}\n`));
-await sleep(2500);
+await sleep(0050);
 
     } else if (result == 'BANNED') {
       console.log(chalk.bgRed(`Akun lu di banned kontol?`));
